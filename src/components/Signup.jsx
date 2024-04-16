@@ -17,7 +17,7 @@ function Signup()
 
          const res=await axios({
             method:'post',
-            url:["https://backend2-eosin.vercel.app/api/signup"],
+            url:["http://localhost:12345/api/signup"],
             withCredentials:true,
             data:{email,password}
     
@@ -26,7 +26,7 @@ function Signup()
       if(res.data.success)
       {
          alert('successfully Login')
-         navigate('/profile')
+         navigate('/result')
          console.log(res.data)
       }
 

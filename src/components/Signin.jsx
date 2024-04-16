@@ -6,8 +6,12 @@ import axios from "axios"
 function Signin()
 {
 
-    const [name,setname]=useState()
+    const [firstname,setfirstname]=useState()
+    const [lastname,setlastname]=useState()
     const [email,setemail]=useState()
+    const [dateofbirth,setdateofbirth]=useState()
+    const [mobile,setmobile]=useState()
+    const [address,setaddress]=useState()
     const [password,setpassword]=useState()
     const [confirmpassword,setconfirmpassword]=useState()
     const navigate=useNavigate()
@@ -19,9 +23,9 @@ function Signin()
         try{
             const res=await axios({
                 method:'post',
-                url:['https://backend2-eosin.vercel.app/api/signin'],
+                url:['http://localhost:12345/api/signin'],
                 withCredentials:true,
-                data:{name,email,password,confirmpassword}
+                data:{firstname,lastname,email,dateofbirth,mobile,address,password,confirmpassword}
              })
      
              if(res.data.success)
@@ -45,11 +49,27 @@ function Signin()
         <>
         <form onSubmit={handlesubmit}>
             <div>
-                Name : <input type="text" name="name" onChange={(e)=>setname(e.target.value)}/>
+                First Name : <input type="text" name="firstname" onChange={(e)=>setfirstname(e.target.value)}/>
+            </div>
+            <br />
+            <div>
+                Last Name : <input type="text" name="lastname" onChange={(e)=>setlastname(e.target.value)}/>
             </div>
             <br />
             <div>
                 Email : <input type="email" name="email" onChange={((e)=>setemail(e.target.value))}/>
+            </div>
+            <br />
+            <div>
+               Date Of Birth : <input type="date" name="dateofbirth" onChange={(e)=>setdateofbirth(e.target.value)} />
+            </div>
+            <br />
+            <div>
+                Mobile Number : <input type="text" name="mobile" onChange={(e)=>setmobile(e.target.value)}/>
+            </div>
+            <br />
+            <div>
+                Address : <input type="text" name="address" onChange={(e)=>setaddress(e.target.value)}/>
             </div>
             <br />
             <div>
