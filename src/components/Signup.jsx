@@ -17,7 +17,7 @@ function Signup()
 
          const res=await axios({
             method:'post',
-            url:["http://localhost:12345/api/signup"],
+            url:["https://backend3-biy7.onrender.com/api/signup"],
             withCredentials:true,
             data:{email,password}
     
