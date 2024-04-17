@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
+import './Signin.css'
 
 function Profile()
 {
@@ -15,7 +16,7 @@ function Profile()
         try{
             const res=await axios({
                 method:'get',
-                url:["http://localhost:12345/api/profile"],
+                baseURL:"http://localhost:12345/api/profile",
                 withCredentials:true
             })
     
@@ -39,7 +40,7 @@ function Profile()
         try{
             const res=await axios({
                 method:'get',
-                url:['http://localhost:12345/api/logout'],
+                baseURL:"http://localhost:12345/api/logout",
                 withCredentials:true
             })
     
@@ -60,7 +61,7 @@ function Profile()
     
 
     return(
-        <>
+        <div className="container-2">
         <div>
             <h1>Your Profile</h1>
         </div>
@@ -81,7 +82,7 @@ function Profile()
             <button onClick={handleclick}>Logout</button>
         </div>
 
-        </>
+        </div>
     )
 }
 

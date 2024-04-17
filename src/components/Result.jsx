@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-
+import './Signin.css'
 function Result()
 {
 
@@ -10,11 +10,13 @@ function Result()
     }
 
     return (
-        <>
+        <div className="container">
+            <div className="result-box">
            <h1>You are successfully Login</h1>
            <br />
            <button onClick={handleclick}>Profile</button>
-        </>
+           </div>
+        </div>
     )
 }
 

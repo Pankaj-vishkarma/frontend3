@@ -2,6 +2,7 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
+import './Signin.css'
 
 function Signin()
 {
@@ -47,42 +48,44 @@ function Signin()
 
     return(
         <>
-        <form onSubmit={handlesubmit}>
-            <div>
+        <form  className="container" onSubmit={handlesubmit}>
+            <div className="input-box">
+            <div className="input">
                 First Name : <input type="text" name="firstname" onChange={(e)=>setfirstname(e.target.value)}/>
             </div>
             <br />
-            <div>
+            <div className="input">
                 Last Name : <input type="text" name="lastname" onChange={(e)=>setlastname(e.target.value)}/>
             </div>
             <br />
-            <div>
+            <div className="input">
                 Email : <input type="email" name="email" onChange={((e)=>setemail(e.target.value))}/>
             </div>
             <br />
-            <div>
+            <div className="input">
                Date Of Birth : <input type="date" name="dateofbirth" onChange={(e)=>setdateofbirth(e.target.value)} />
             </div>
             <br />
-            <div>
+            <div className="input">
                 Mobile Number : <input type="text" name="mobile" onChange={(e)=>setmobile(e.target.value)}/>
             </div>
             <br />
-            <div>
+            <div className="input">
                 Address : <input type="text" name="address" onChange={(e)=>setaddress(e.target.value)}/>
             </div>
             <br />
-            <div>
+            <div className="input">
                 Password : <input type="text" name="password" onChange={(e)=>setpassword(e.target.value)}/>
             </div>
             <br />
-            <div>
+            <div className="input">
                 Confirm password : <input type="text" name="confirmpassword" onChange={(e)=>setconfirmpassword(e.target.value)}/>
             </div>
             <br />
-            <button>submit</button>
+            <button className="input">submit</button>
             <br />
-            <Link to='/signup'>Are you registered?</Link>
+            <Link className="input" to='/signup'>Are you registered?</Link>
+            </div>
         </form>
         </>
     )
