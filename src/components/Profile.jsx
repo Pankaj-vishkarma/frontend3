@@ -40,7 +40,7 @@ function Profile()
         try{
             const res=await axios({
                 method:'get',
-                baseURL:"http://localhost:12345/api/logout",
+                baseURL:"https://backend3-biy7.onrender.com/api/logout",
                 withCredentials:true
             })
     
