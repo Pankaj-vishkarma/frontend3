@@ -16,7 +16,7 @@ function Profile()
         try{
             const res=await axios({
                 method:'get',
-                baseURL:"http://localhost:12345/api/profile",
+                baseURL:"https://backend3-biy7.onrender.com/api/profile",
                 withCredentials:true
             })
     
